@@ -1,7 +1,32 @@
+import Slider from '@/Components/Slider';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
 export default function Dashboard() {
+    const categories = [
+        {
+            title: "Kids",
+            image: "/images/kids.png", // Ensure this path is correct and the image exists
+            value: "kids",
+        },
+        {
+            title: "Men",
+            image: "/images/men.png", // Ensure this path is correct and the image exists
+            value: "men",
+        },
+        {
+            title: "Women",
+            image: "/images/women.png", // Ensure this path is correct and the image exists
+            value: "women",
+        },
+    ];
+
+    const handleCategories = (value) => {
+        console.log("OOOK");
+        console.log(value);
+        
+        
+    }
     return (
         <AuthenticatedLayout
             header={
@@ -19,6 +44,7 @@ export default function Dashboard() {
                             You're logged in!
                         </div>
                     </div>
+                    <Slider items={categories} onSelect={handleCategories} />
                 </div>
             </div>
         </AuthenticatedLayout>
